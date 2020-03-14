@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>VSC THEME</title>
+    </head>
+    <body>
+        
+        <nav>
+            <div class = "navigation">
+                <h3 id = "menu">
+                    <a href = "/index.html">Home</a>
+                    |
+                    <a href = "/blogs_page.html"> Blogs</a>
+                    |
+                    <a href = "/guides_page.html"> Guides</a>
+                    |
+                    <a href = "/projects_page.html"> Projects</a>
+                    |
+                    Archives
+                </h3>
+            </div>
+        </nav>
+        <header>
+            <h1>GUIDE: How to create a Custom Visual Studio Code Theme</h1>
+        </header>
+        <hr>
+        <article>
+            <h1>
+                Before and After
+            </h1>
+            Default Theme<br>
+            <img src = "defaulttheme.png">
+            The theme I created (Available <a href = "https://github.com/emarino135/Mini_Projects_2020/tree/master/VS%20CODE%20THEME">here</a>)
+            <a href = "https://github.com/emarino135/Mini_Projects_2020/tree/master/VS%20CODE%20THEME"><img src = "mytheme.png"></a>
+
+            <h1>Where to begin</h1>
+                <p>
+                    1.Open up Visual Studio Code and press CTLR + SHIFT + P <br>
+                    to open up the command palette<br>
+                    <br>
+                    2. Type "User" so "Preferences: User Settings" pops up<br>
+                    click on it or hit enter if it's the top suggestion (faster)<br>
+                    <br>
+                    3. Click on the folder named "WORKBENCH" NOT "WORKPLACE"<br>
+                    than right under "Experimental: Editor Associations" click<br>
+                    click on Edit setting.JSON <br>
+                    If you don't see it make sure you clicked on Workbench or<br>
+                    type "Experimental: Editor Associations" into the search bar<br>
+                    <br>
+                    4. Next it will open a JSON file that has all your settings<br>
+                    for how your visual Studio Theme looks like right now<br>
+                    If you already have a theme installed I suggest uninstalling it<br>
+                    as it could complicate this process<br>
+                    It's best to start with a fresh one<br>
+                    <br>
+                    To switch back to a default theme just open command palette and type<br>
+                    preferences and select color theme. From there you should be able<br>
+                    to select a default theme<br>
+                    <br>
+                </p>
+            <h1>Creating your own theme</h1>
+                <p>
+                    There are actually two parts to this process<br>
+                    First you're going to want to build your general theme<br>
+                    and then your going to want to edit the font theme<br>
+                    Because picking font colors is really tidious if you still<br>
+                    haven't settled with a background color that fits the rest of your<br>
+                    interface<br>
+                    <br>
+                    Also font colors can be language specific. So you can have font colors<br>
+                    set just for Java, Python, HTML whatever you can possibly name! <br>
+                    Just look at how my font text is completely diffect from the font text<br>
+                    in the default<br>
+                    <br>
+                    Also here's a link to a website that can generate color themes<br>
+                    that are complemtary of each other<br>
+                    <a href = "http://colormind.io/">Click Here</a>
+                    
+                </p>
+                <h2>Editing the workbench</h2>
+                    <p>
+                        When you look inside your settings.JSON you will see all sorts <br>
+                        of User Settings that you manuallying switched from default<br>
+                        It may be empty if this is your first time opening Visual Studio Code<br>
+                        <br>
+                        In order to change to look of the GUI you're going to want to use this<br>
+                        "workbench.colorCustomizations": {}<br>
+                        and inside the {} you add a "property": value like this<br>
+                        <br>
+                            "workbench.colorCustomizations": {<br>
+                                "foreground": "#ffffff",<br>
+                                "someotherProperty": "#hexcolr"<br>
+                            }
+                        <br>
+                        Now if you want to actually color ALL of the IDE you're going to need<br>
+                        all the possible property names <br>
+                        <br>
+                        Here is a <a href = "https://gist.github.com/lol-russo/1c7a0b958be4b9434c5a120f24d5e7c3">list</a> provided by lol-russo on github:<br>
+                        "workbench.colorCustomizations": { <br>
+                            <br>
+                            // Contrast Colors - The contrast colors are typically only set for high contrast themes. If set, they add an additional border around items across the UI to increase the contrast.<br>
+                            "contrastActiveBorder": "",<br>
+                            "contrastBorder": "",<br>
+                            // Base Colors<br>
+                            "focusBorder": "",<br>
+                            "foreground": "",<br>
+                            "widget.shadow": "",<br>
+                            "selection.background": "",<br>
+                            "descriptionForeground": "",<br>
+                            "errorForeground": "",<br>
+                            // Text Colors — Colors inside a text document, such as the welcome page.<br>
+                            "textBlockQuote.background": "",<br>
+                            "textBlockQuote.border": "",<br>
+                            "textCodeBlock.background": "",<br>
+                            "textLink.activeForeground": "",<br>
+                            "textLink.foreground": "",<br>
+                            "textPreformat.foreground": "",<br>
+                            "textSeparator.foreground": "",<br>
+                            // Button Control — A set of colors for button widgets such as Open Folder button in the Explorer of a new window.<br>
+                            "button.background": "",<br>
+                            "button.foreground": "",<br>
+                            "button.hoverBackground": "",<br>
+                            // Dropdown Control — A set of colors for all dropdown widgets such as in the Integrated Terminal or the Output panel. Note that the dropdown control is not used on macOS currently.<br>
+                            "dropdown.background": "",<br>
+                            "dropdown.listBackground": "",<br>
+                            "dropdown.border": "",<br>
+                            "dropdown.foreground": "",<br>
+                            // Input Control — Colors for input controls such as in the Search view or the Find/Replace dialog.<br>
+                            "input.background": "",<br>
+                            "input.border": "",<br>
+                            "input.foreground": "",<br>
+                            "input.placeholderForeground": "",<br>
+                            "inputOption.activeBorder": "",<br>
+                            "inputValidation.errorBackground": "",<br>
+                            "inputValidation.errorBorder": "",<br>
+                            "inputValidation.infoBackground": "",<br>
+                            "inputValidation.infoBorder": "",<br>
+                            "inputValidation.warningBackground": "",<br>
+                            "inputValidation.warningBorder": "",<br>
+                            // Scroll Bar Control<br>
+                            "scrollbar.shadow": "",<br>
+                            "scrollbarSlider.activeBackground": "",<br>
+                            "scrollbarSlider.background": "",<br>
+                            "scrollbarSlider.hoverBackground": "",<br>
+                            // Badge — Badges are small information labels, for example, search results count.<br>
+                            "badge.foreground": "",<br>
+                            "badge.background": "",<br>
+                            // Progress Bar<br>
+                            "progressBar.background": "",<br>
+                            // Lists and Trees — Colors for list and trees like the File Explorer. An active list/tree has keyboard focus, an inactive does not.<br>
+                            "list.activeSelectionBackground": "",<br>
+                            "list.activeSelectionForeground": "",<br>
+                            "list.dropBackground": "",<br>
+                            "list.focusBackground": "",<br>
+                            "list.focusForeground": "",<br>
+                            "list.highlightForeground": "",<br>
+                            "list.hoverBackground": "",<br>
+                            "list.hoverForeground": "",<br>
+                            "list.inactiveSelectionBackground": "",<br>
+                            "list.inactiveSelectionForeground": "",<br>
+                            "list.inactiveFocusBackground": "",<br>
+                            "list.invalidItemForeground": "",<br>
+                            // Activity Bar — The Activity Bar is displayed either on the far left or right of the workbench and allows fast switching between views of the Side Bar.<br>
+                            "activityBar.background": "",<br>
+                            "activityBar.dropBackground": "",<br>
+                            "activityBar.foreground": "",<br>
+                            "activityBar.border": "",<br>
+                            "activityBarBadge.background": "",<br>
+                            "activityBarBadge.foreground": "",<br>
+                            // Side Bar — The Side Bar contains views like the Explorer and Search.<br>
+                            "sideBar.background": "",<br>
+                            "sideBar.foreground": "",<br>
+                            "sideBar.border": "",<br>
+                            "sideBar.dropBackground": "",<br>
+                            "sideBarTitle.foreground": "",<br>
+                            "sideBarSectionHeader.background": "",<br>
+                            "sideBarSectionHeader.foreground": "",<br>
+                            // Editor Groups & Tabs — Editor Groups are the containers of editors. There can be up to three editor groups. A Tab is the container of an editor. Multiple Tabs can be opened in one editor group.<br>
+                            "editorGroup.background": "",<br>
+                            "editorGroup.border": "",<br>
+                            "editorGroup.dropBackground": "",<br>
+                            "editorGroupHeader.noTabsBackground": "",<br>
+                            "editorGroupHeader.tabsBackground": "",<br>
+                            "editorGroupHeader.tabsBorder": "",<br>
+                            "tab.activeBackground": "",<br>
+                            "tab.activeForeground": "",<br>
+                            "tab.border": "",<br>
+                            "tab.activeBorder": "",<br>
+                            "tab.unfocusedActiveBorder": "",<br>
+                            "tab.inactiveBackground": "",<br>
+                            "tab.inactiveForeground": "",<br>
+                            "tab.unfocusedActiveForeground": "",<br>
+                            "tab.unfocusedInactiveForeground": "",<br>
+                            "tab.hoverBackground": "",<br>
+                            "tab.unfocusedHoverBackground": "",<br>
+                            "tab.hoverBorder": "",<br>
+                            "tab.unfocusedHoverBorder": "",<br>
+                            // Editor Colors — for syntax highlighting, use the editor.tokenColorCustomizations setting. All other editor colors are listed here<br>
+                            "editor.background": "",<br>
+                            "editor.foreground": "",<br>
+                            "editorLineNumber.foreground": "",<br>
+                            "editorLineNumber.activeForeground": "",<br>
+                            "editorCursor.background": "",<br>
+                            "editorCursor.foreground": "",<br>
+                            "editor.selectionBackground": "",<br>
+                            "editor.selectionForeground": "",<br>
+                            "editor.inactiveSelectionBackground": "",<br>
+                            "editor.selectionHighlightBackground": "",<br>
+                            "editor.selectionHighlightBorder": "",<br>
+                            "editor.wordHighlightBackground": "",<br>
+                            "editor.wordHighlightBorder": "",<br>
+                            "editor.worldHighlightStrongBackground": "",<br>
+                            "editor.wordHighlightStrongBorder": "",<br>
+                            "editor.findMatchBackground": "",<br>
+                            "editor.findMatchHighlightBackground": "",<br>
+                            "editor.findRangeHighlightBackground": "",<br>
+                            "editor.findMatchBorder": "",<br>
+                            "editor.findMatchHighlightBorder": "",<br>
+                            "editor.hoverHighlightBackground": "",<br>
+                            "editor.lineHighlightBackground": "",<br>
+                            "editor.lineHighlightBorder": "",<br>
+                            "editorLink.activeForeground": "",<br>
+                            "editor.rangeHighlightBackground": "",<br>
+                            "editor.rangeHighlightBorder": "",<br>
+                            "editorWhitespace.foreground": "",<br>
+                            "editorIndentGuide.background": "",<br>
+                            "editorRuler.foreground": "",<br>
+                            "editorCodeLens.foreground": "",<br>
+                            "editorBracketMatch.background": "",<br>
+                            "editorBracketMatch.border": "",<br>
+                            "editorOverviewRuler.border": "",<br>
+                            "editorOverviewRuler.findMatchForeground": "",<br>
+                            "editorOverviewRuler.rangeHighlightForeground": "",<br>
+                            "editorOverviewRuler.selectionHighlightForeground": "",<br>
+                            "editorOverviewRuler.wordHighlightForeground": "",<br>
+                            "editorOverviewRuler.wordHighlightStrongForeground": "",<br>
+                            "editorOverviewRuler.modifiedForeground": "",<br>
+                            "editorOverviewRuler.addedForeground": "",<br>
+                            "editorOverviewRuler.deletedForeground": "",<br>
+                            "editorOverviewRuler.errorForeground": "",<br>
+                            "editorOverviewRuler.warningForeground": "",<br>
+                            "editorOverviewRuler.infoForeground": "",<br>
+                            "editorError.foreground": "",<br>
+                            "editorError.border": "",<br>
+                            "editorWarning.foreground": "",<br>
+                            "editorWarning.border": "",<br>
+                            "editorInfo.foreground": "",<br>
+                            "editorInfo.border": "",<br>
+                            "editorHint.foreground": "",<br>
+                            "editorHint.border": "",<br>
+                            "editorGutter.background": "",<br>
+                            "editorGutter.modifiedBackground": "",<br>
+                            "editorGutter.addedBackground": "",<br>
+                            "editorGutter.deletedBackground": "",<br>
+                            // Diff Editor Colors — For coloring inserted and removed text, use either a background or a border color but not both.<br>
+                            "diffEditor.insertedTextBackground": "",<br>
+                            "diffEditor.insertedTextBorder": "",<br>
+                            "diffEditor.removedTextBackground": "",<br>
+                            "diffEditor.removedTextBorder": "",<br>
+                            // Editor Widget Colors - The Editor widget is shown in front of the editor content. Examples are the Find/Replace dialog, the suggestion widget, and the editor hover<br>
+                            "editorWidget.background": "",<br>
+                            "editorWidget.border": "",<br>
+                            "editorSuggestWidget.background": "",<br>
+                            "editorSuggestWidget.border": "",<br>
+                            "editorSuggestWidget.foreground": "",<br>
+                            "editorSuggestWidget.highlightForeground": "",<br>
+                            "editorSuggestWidget.selectedBackground": "",<br>
+                            "editorHoverWidget.background": "",<br>
+                            "editorHoverWidget.border": "",<br>
+                            "debugExceptionWidget.background": "",<br>
+                            "debugExceptionWidget.border": "",<br>
+                            "editorMarkerNavigation.background": "",<br>
+                            "editorMarkerNavigationError.background": "",<br>
+                            "editorMarkerNavigationWarning.background": "",<br>
+                            "editorMarkerNavigationInfo.background": "",<br>
+                            // Peek View Colors — Peek views are used to show references and declarations as a view inside the editor.<br>
+                            "peekView.border": "",<br>
+                            "peekViewEditor.background": "",<br>
+                            "peekViewEditorGutter.background": "",<br>
+                            "peekViewEditor.matchHighlightBackground": "",<br>
+                            "peekViewResult.background": "",<br>
+                            "peekViewResult.fileForeground": "",<br>
+                            "peekViewResult.lineForeground": "",<br>
+                            "peekViewResult.matchHighlightBackground": "",<br>
+                            "peekViewResult.selectionBackground": "",<br>
+                            "peekViewResult.selectionForeground": "",<br>
+                            "peekViewTitle.background": "",<br>
+                            "peekViewTitleDescription.foreground": "",<br>
+                            "peekViewTitleLabel.foreground": "",<br>
+                            // Merge Conflicts — Merge conflict decorations are shown when the editor contains special diff ranges.<br>
+                            "merge.currentHeaderBackground": "",<br>
+                            "merge.currentContentBackground": "",<br>
+                            "merge.incomingHeaderBackground": "",<br>
+                            "merge.incomingContentBackground": "",<br>
+                            "merge.border": "",<br>
+                            "merge.commonContentBackground": "",<br>
+                            "merge.commonHeaderBackground": "",<br>
+                            "editorOverviewRuler.currentContentForeground": "",<br>
+                            "editorOverviewRuler.currentContentForeground": "",<br>
+                            "editorOverviewRuler.commonContentForeground": "",<br>
+                            // Panel Colors — Panels are shown below the editor area and contain views like Output and Integrated Terminal.<br>
+                            "panel.background": "",<br>
+                            "panel.border": "",<br>
+                            "panel.dropBackground": "",<br>
+                            "panelTitle.activeBorder": "",<br>
+                            "panelTitle.activeForeground": "",<br>
+                            "panelTitle.inactiveForeground": "",<br>
+                            // Status Bar Colors — The Status Bar is shown in the bottom of the workbench.<br>
+                            "statusBar.background": "",<br>
+                            "statusBar.foreground": "",<br>
+                            "statusBar.border": "",<br>
+                            "statusBar.debuggingBackground": "",<br>
+                            "statusBar.debuggingForeground": "",<br>
+                            "statusBar.debuggingBorder": "",<br>
+                            "statusBar.noFolderForeground": "",<br>
+                            "statusBar.noFolderBackground": "",<br>
+                            "statusBar.noFolderBorder": "",<br>
+                            "statusBarItem.activeBackground": "",<br>
+                            "statusBarItem.hoverBackground": "",<br>
+                            "statusBarItem.prominentBackground": "",<br>
+                            "statusBarItem.prominentHoverBackground": "",<br>
+                            // Title Bar Colors (macOS)<br>
+                            "titleBar.activeBackground": "",<br>
+                            "titleBar.activeForeground": "",<br>
+                            "titleBar.inactiveBackground": "",<br>
+                            "titleBar.inactiveForeground": "",<br>
+                            "titleBar.border": "",<br>
+                            // Notification Colors — Notification toasts slide up from the bottom-right of the workbench.<br>
+                            "notificationCenter.border": "",<br>
+                            "notificationCenterHeader.foreground": "",<br>
+                            "notificationCenterHeader.background": "",<br>
+                            "notificationToast.border": "",<br>
+                            "notifications.foreground": "",<br>
+                            "notifications.background": "",<br>
+                            "notifications.border": "",<br>
+                            "notificationLink.foreground": "",<br>
+                            // Extensions<br>
+                            "extensionButton.prominentForeground": "",<br>
+                            "extensionButton.prominentBackground": "",<br>
+                            "extensionButton.prominentHoverBackground": "",<br>
+                            "pickerGroup.border": "",<br>
+                            "pickerGroup.foreground": "",<br>
+                            // Integrated Terminal Colors<br>
+                            "terminal.background": "",<br>
+                            "terminal.foreground": "",<br>
+                            "terminal.ansiBlack": "",<br>
+                            "terminal.ansiBlue": "",<br>
+                            "terminal.ansiBrightBlack": "",<br>
+                            "terminal.ansiBrightBlue": "",<br>
+                            "terminal.ansiBrightCyan": "",<br>
+                            "terminal.ansiBrightGreen": "",<br>
+                            "terminal.ansiBrightMagenta": "",<br>
+                            "terminal.ansiBrightRed": "",<br>
+                            "terminal.ansiBrightWhite": "",<br>
+                            "terminal.ansiBrightYellow": "",<br>
+                            "terminal.ansiCyan": "",<br>
+                            "terminal.ansiGreen": "",<br>
+                            "terminal.ansiMagenta": "",<br>
+                            "terminal.ansiRed": "",<br>
+                            "terminal.ansiWhite": "",<br>
+                            "terminal.ansiYellow": "",<br>
+                            "terminal.selectionBackground": "",<br>
+                            "terminalCursor.background": "",<br>
+                            "terminalCursor.foreground": "",<br>
+                            // Debug<br>
+                            "debugToolBar.background": "",<br>
+                            // Welcome Page<br>
+                            "welcomePage.buttonBackground": "",<br>
+                            "welcomePage.buttonHoverBackground": "",<br>
+                            "walkThrough.embeddedEditorBackground": "",<br>
+                            // Git Colors<br>
+                            "gitDecoration.modifiedResourceForeground": "",<br>
+                            "gitDecoration.deletedResourceForeground": "",<br>
+                            "gitDecoration.untrackedResourceForeground": "",<br>
+                            "gitDecoration.ignoredResourceForeground": "",<br>
+                            "gitDecoration.conflictingResourceForeground": ""<br>
+                        }
+                    </p>
+                    <h2>Now just copy and paste into your setting!</h2>
+                    <p>
+                        Now all you have to do is simply add a color using #ffffffff<br>
+                        It's just trial and error<br>
+                        What I did was if I couldn't find exactly where something was and it wasn't appearing on my screen<br>
+                        I'd color it pink and move on to the next thing<br>
+                        I kept tweaking it until I found what I really liked<br>
+                        Than over the course of a few months when ever I'd find those pink lil devils<br>
+                        I'd google to find what the name was or comment out every pink color setting <br>
+                        Until something altered the pink little thing<br>
+                        <br>
+                        Also don't forget that the settings only apply when you hit save<br>
+                    </p>
+                <h1>Editing Font Colors</h1>
+                    <p>
+                        This part is actually much easier and doesn't<br>
+                        rely on much guess work like trying to figure out <br>
+                        the property names of the Workbench<br>
+                        <br>
+                        All you have to do is open the same settings.JSON file<br>
+                        and add <br>
+                        <br>
+                        "textMateRules": []<br>
+                        <br>
+                        Just like "workbenchColorCustomizations"<br>
+                        but instead of {} you NEED to use []<br>
+                        <br>
+                        And of course you guess it the properties probably go inside<br>
+                        but it's a little different formatting for textMateRules<br>
+                        inside the [] goes these things called SCOPES that are formatted like this
+                        {<br>
+                            "scope": "comment.block",   //Comment Blocks<br>
+                            "settings": {<br>
+                                "foreground": "#cc9a50",<br>
+                                "fontStyle": "bold",<br>
+                            }<br>
+                        },<br>
+                        {<br>
+                            "scope": "otherproperty.block",<br>
+                            "settings": {<br>
+                                "foreground": "#cc9a50",<br>
+                                "fontStyle": "bold",<br>
+                            }<br>
+                        },<br>
+                        Each scope picks a property and than under settings<br>
+                        alters something about the property<br>
+                        here I'm mostly just going to show you to alter the "foreground" <br>
+                        <br>
+                    </p>    
+                    <h2>How do you find the property names for fonts?</h2>
+                    <p>
+                        Say you want to color the "package" in Java or the <br>
+                        "tags" in HTML red than you're going to need to find the<br>
+                        exact scope for that specific item<br>
+                        <br>
+                        All you need to do is open the command palette<br>
+                        and search for "Developer: Editor Tokens and Scopes"<br>
+                        <br>
+                        Now when you open up the language of your choice you can click<br>
+                        on the "tags" or "package" labels and get the exact scope name<br>
+                        for that piece of text<br>
+                        <br>
+                        Than all you have to do is copy the scope address and <br>
+                        paste it under the "scope": "",<br>
+                        <br>
+                        So say I want to change the foreground for HTML tags I'd find the scope<br>
+                        and than pase it under scope<br>
+                        <br>
+                        {<br>
+                            "scope": "entity.name.tag.html",<br>
+                            "settings": {<br>
+                                "foreground": "#FC7676",<br>
+                            }<br>
+                        },<br>
+                        <br>
+                        AND just like that my tags are now RED just like the example in the before and after<br>
+                        <br>
+                        Thanks for listening,
+                        <br>
+                        peace.
+                    </p>
+
+        </article>
+        <footer>
+            <h1>Credit to resources used: </h1>
+            <p1>
+                <a href = "https://gist.github.com/lol-russo">lol-russo</a><br>
+                For providing his helpful <a href = "https://gist.github.com/lol-russo/1c7a0b958be4b9434c5a120f24d5e7c3">list</a>  of all property names for workbenchColorCustomizations<br>
+            </p1>
+        </footer>
+        <hr>
+    </body>
+</html>
