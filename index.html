@@ -1,93 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "utf-8">
-
+    <head lang ="en">
+        <meta charset = "UTF-8">
         <title>Edwin Marino</title>
-        <meta name="description" content="Edwin's personal online journal filled with tech guides, development blogs and coding projects">
-        <link rel = "stylesheet" href = "css/style.css"
+        <meta name="author" content="Edwin Marino">
+        <meta name="description" content="GMU COMPUTER SCIENCE STUDENT | DEVELOPMENT BLOGS | PROJECTS">
+        <meta name="keywords" content="edwin, marino, blog, computer science, george mason, gmu, university, college, virginia, dc">
+        <link rel = "icon" href = "images/favicon.ico">
+        <!-- <link rel = "stylesheet" href = "css/styles.css"> -->
     </head>
+
     <body>
-        
-    
-      
-        <table>
-            <tr>
-                <th><img src = "images/author/profile_pic_small.webp"></th>
-                <th><h1>Edwin Marino</h1></th>
-            </tr>
-        </table>
-        
-        <hr>
-        <h3>
-        <a href = "index.html">Home</a>
-        |
-        <a href = "blogs_page.html"> Blogs</a>
-        |
-        <a href = "guides_page.html"> Guides</a>
-        |
-        <a href = "projects_page.html"> Projects</a>
-        |
-        Archives
+
+        <header>
+            <table>
+                <tr>
+                    <th><img src = "images/author/profile_pic_small.webp"></th>
+                    <th><h1>Edwin Marino</h1></th>
+                </tr>
+            </table>    
+        </header>
+
+        <nav>
+            <div class = "header">
+                <h3 id = "menu">
+                    <a href = "index.html">Home</a>
+                    |
+                    <a href = "blogs_page.html"> Blogs</a>
+                    |
+                    <a href = "guides_page.html"> Guides</a>
+                    |
+                    <a href = "projects_page.html"> Projects</a>
+                    |
+                    Archives
+                </h3>
+            </div>
+        </nav>
         <!--Create a drop down to choose which archive library
-        Blogs or Guides or Libraries-->
-        </h3>
-        <hr>
-    
+            Blogs or Guides or Libraries-->
+        
+        
         <!--Introduction-->
-        <h1>Home</h1>
-        <p>  
-            Hello welcome to my webpage <br>
-            Here you will find my personal development blog, <br>
-            programming guides, and completed projects <br>
-            <br>
-            <a href = "aboutMe.html">about me</a>
-            <br><br>
-            <a href = "portfolio.html"> Portfolio</a>
-        
+        <section>
+            <header>
+                <h1>Home</h1>
+            </header>
+            <p>  
+                Hello welcome to my webpage <br>
+                Here you will find my personal development blog, <br>
+                programming guides, and completed projects <br>
+                <br>
+                <a href = "aboutMe.html">about me</a>
+                <br><br>
+                <a href = "portfolio.html"> Portfolio</a>       
+            </p>
+        </section>
 
-           
-        </p>
-        
-        <h1> This site is under construction sorry for <br>
-            the inconvinence!  <br></h1>
-        
       
         
-
-        <hr>
-        <!--Latest Projects Guides and Blogs-->
-        <h3>Latest in Blogs</h3>
-                <h1>Blog1</h1>  
+        <!-- Latest Blogs Panel -->
+        <section>
+            <header>
+                <h1>NEW BLOGS</h1>
+            </header>
+            <div>
+                <h1>edwin-marino.com Updates</h1>
                 <p>
-                    xx/xx/xxxx <br>
-                    (Blog1 image and summary goes here)<br>
-                <a href = "templates/blog_template.html">More details</a><br>
+                    Lasted Update 3/12/2020 <br>
+                    Hear more about what's going on during <br>
+                    Front End development for this site <br>
+                    <a href = "single/blogs/blog1/page.html">Fine out here</a><br>
+                    <img src = "single/blogs/blog1/webupdates.jpg">
                 </p>
-        <hr>
-        <h3>Latest in Guides </h3>
-            <h1>Guide1</h1>  
-            <p>
-                xx/xx/xxxx <br>
-                (Guide1 image and summary goes here)<br>
-            <a href = "templates/guide_template.html">More details</a><br>
-            </p>
-        <hr>      
-        <h3>Latest in Projects</h3>
-            <h1>Project1</h1>  
-            <p>
-                xx/xx/xxxx <br>
-                (Project1 image and summary goes here)<br>
-            <a href = "templates/project_template.html">More details</a><br>
-            </p>
-                
-     
-        <br>
-        <hr>
+            </div>
+            <hr>
+        </section>        
+        <!-- Latest Guides Panel -->
+        <section>
+           <header>
+               <h1>NEW GUIDES</h1>
+            </header>
+
+            
+            <div>
+                <h1>How to get a cheap static website</h1> 
+                <p>
+                    Posted : 03/12/2020 <br>
+                  
+                    Find out how I set up a custom domain and got FREE web hosting<br>
+                    using github pages  <br>
+                   
+                    <a href = "single/guides/guide1/page.html">More details</a><br>
+                    <a href = "https://pages.github.com/"><img src = "single/guides/guide1/githubpages.png"></a>
+                    <br>
+                </p>
+                <hr>
+            </div>  
+        </section>
+        
+        <!-- Latest Projects Panel -->
+        <section>
+            <header>
+                <h3>PROJECTS</h3>
+            </header>
+            <div>
+                <h1>Basic TicTacToe GUI with Java!</h1>  
+                <p>
+                    3/13/2020 <br>
+                    Find out how to create a basic TicTacToe game using Swing's library<br>
+                    <a href = "single/projects/project1/page.html">Read details</a><br>
+                    <a href = "single/projects/project1/page.html"><img src = "single/projects/project1/miniFinished.png"></a>
+                </p>
+                <br>
+                <hr>
+            </div>
+        </section>
+        
         <!--Contact me section and outside links-->
-        <center><a href = "contact.html">Contact Me</a></center>
-        <br>
+        <footer>
+            <a href = "contact.html">Contact Me</a>                 
+            <br>
+        </footer>
     </body>
 
-    </body>
 </html>
