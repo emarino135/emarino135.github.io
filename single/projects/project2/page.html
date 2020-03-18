@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caesar's Cypher</title>
+    </head>
+    <body>
+        <nav>
+            <div class = "header">
+                <h3 id = "menu">
+                    <a href = "/index.html">Home</a>
+                    |
+                    <a href = "/blogs_page.html"> Blogs</a>
+                    |
+                    <a href = "/guides_page.html"> Guides</a>
+                    |
+                    <a href = "/projects_page.html"> Projects</a>
+                    |
+                    Archives
+                </h3>
+            </div>
+        </nav>
+        <header>
+            <h1>
+                PROJECT: Caesar's Cypher Encrypter/Decrypter with GUI
+            </h1>
+        </header>
+        <article>
+            <img src = "welcomeScreen.png">
+            <h1>What is a Caesar's Cypher?</h1>
+                <p>
+                    As defined by Wikipedia <br>
+                    "The action of a Caesar cipher is to replace each <br>
+                    plaintext letter with a different one a fixed number <br>
+                    of places down the alphabet."<br>
+                    <img src = "wikiImage.png"><br>
+                    Image provided by <a href = "https://en.wikipedia.org/wiki/Caesar_cipher">Wikipedia</a> <br>
+                </p>
+            <h2>What I used</h2> 
+                <p>
+                    <img src = "allFiles.png"> <br>
+                    These are the files I used to create the GUI application. <br>
+                    All are under the package folder CC which stands for "Caesar's Cypher"<br>
+                    I initilially didn't have the idea of creating a GUI application and just<br>
+                    Wrote two seperate Java algorithms for encrypting and decrypting. <br>
+                    <br>
+                    The encrypt.java would read off of the text inside the phrase.txt and shift<br>
+                    the cypher by an int value of args[0] and write to the encrypted.txt text file<br>
+                    <br>
+                    The decrypt.java would read the encrypted.txt and would return each possible <br>
+                    Cypher shift into the terminal but than was change to return it into the<br>
+                    decrypted.txt because I didn't expect to be using a GUI<br>
+                    <br>
+                    The method I used to quickly change the output to the terminal to file was actually<br>
+                    quite interesting as I have never done it before<br>
+                    I found out that you can change the PrintStream of the System.out.print() to write<br>
+                    into a folder if you used System.setOut(PrintStream) and set PrintStream as a new PrintStream(File)<br>
+                    So instead of having to rewrite everything from System.out.println() to a FileWriter I just switched<br>
+                    The PrintStream and it accomplished the exact same thing by just adding 3 lines of code in a few seconds <br>
+                    <br>
+                    But I do believe you still need to import Java.io.* <br>
+                    <br>
+                    <img src = "printStream.png">
+                </p>
+            <h2>Creating the Algorithms</h2>
+                <p>
+                    The algorithms are really quite simple<br>
+                    I just took a phrase from a txt folder and converted it into a <br>
+                    char[] array and than incremented the characters. But if the character<br>
+                    Reached the end of the alphabet like 'z' or 'Z' than they would go back<br>
+                    to being 'a' or 'A' otherwise they would become brackets and curly brackets<br>
+                    <br>
+                    After the programs were finished they would write to their respected file<br>
+                    such as encrypted.txt or decrypted.txt<br>
+                </p>
+            <h2>Creating the GUI application</h2>
+                <p>
+                    For actually creating the visual part of the GUI was simple<br>
+                    The only new things that I used were the JScollPane incase<br>
+                    the decrypting.txt outputed way too long and need extra room<br>
+                    and the Slider so the user can pick a shift value to encrypt to<br>
+                    <br>
+                    The real trick to this project was finding out how to implement <br>
+                    the algorithms I created into the GUI application and that was done<br>
+                    inside the actions folder where I put all the actionListeners<br>
+                    This time I actually didn't use annonymouse classes like I did with<br>
+                    The TicTacToe GUI project. Instead I used a much better method of<br>
+                    implementing ActionListener into the class and than inside the class<br>
+                    <img src = "clearAction.png"><br>
+                    Than from here I created an Object of the class <br>
+                    inside the GUI.java so I can add the behavior to the <br>
+                    JComponent of my choosing<br>
+                    <img src = "settingClearBehavior.png"><br>
+                    In order to do this though I had to set my JComponents that <br>
+                    required an ActionListener as PUBLIC but I could of just<br>
+                    used a Setter/Getter which would have been smarter<br>
+                    But because I understood the scope of this project and <br>
+                    I knew it wasn't going to get much larger I figured it was fine<br>
+                    letting the JComponents stay as PUBLIC <br>
+                    <br>
+                </p>
+            <h2>Application in Action</h2>
+                <p>
+                    After adding the algorithms properly to the actionListeners and<br>
+                    adding the actionListeners to the JComponenets this is the final result<br>
+                    Of course I did a little visual tweaking to fit my style so I made<br>
+                    the text Red and the background White<br>
+                    <img src = "encrypting.png"><br>
+                    Here we have the message "Hello World" and shifting<br>
+                    the phrase up alphabetically by 6 letters <br>
+                    The output is than Nkrru Cuxrj<br>
+                    The program is actually CAPS friendly as CAPS and NON-CAPS <br>
+                    are both handled for properly<br>
+                    But it isn't friendly to non alphbetical characters<br>
+                    In hindsight I could of set the program to just look over <br>
+                    Non alphabetical characters<br>
+                    <img src = "decrypting.png"><br>
+                    Now here we have the program decrypting<br>
+                    So say a stranger in a noire trench coat at a diner at 3 AM slipped you<br>
+                    a napkin with "Nkrru Cuxrj" written on it in pen and you wanted to know <br>
+                    how to decypher it without manually changing each character (10chars)<br>
+                    26 times (260 Characters!)<br>
+                    <br>
+                    Instead you just write the phrase into the program and hit decrypt<br>
+                    Now it does it automatically for you <br>
+                    If you read through the shift you will find that shifting the phrase<br>
+                    up 20 times gives you the original message "Hello World"<br>
+                    <br>
+                    The reason shifting 20 times up instead of 6 times up like we <br>
+                    had originally encrypted is because when we encrypted we shift up 6 times<br>
+                    the decrypter also shifts up<br>
+                    We could decypt by shifting down 6 or by shifting up 20<br>
+                    It's because the alphabet will loop back from A to A if you shift 26 times<br>
+                    Shifting down by 6 or shifting up by 20 still equals the same result <br>
+                    Because there are 26 characters in the alphabet and 6 + 20 = 26<br>
+                    MIND BLOWN<br>
+                    <br>
+                    Thanks for listening,<br>
+                    <br>
+                    Study hard,<br>
+                    <br>
+                    Peace.
+                </p>
+        </article>
+        <footer>
+            <h1>Credit to:</h1>
+            WikiPedia "https://en.wikipedia.org/wiki/Caesar_cipher"
+                For Caesar Cipher's definition and image
+        </footer>
+    </body>
+</html>
