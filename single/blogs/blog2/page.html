@@ -26,6 +26,137 @@
         </header>
         <hr>
         <article>
+            <!-- created on 3/27/2020 march 2020 -->
+            <div>
+                <h1>Optimized Code. Added new actions. Added Fail-Safe feature</h1>
+                    <h2>Optimized Performance:</h2>
+                        Created 3/27/2020 March 2020
+                        <p>
+                            The bot has a method called .collectAllData() that refreshed all the stats<br>
+                            that are important when it goes into decision making<br>
+                            Since the bot runs it's decision making on an infinite while loop (Until terminated)<br>
+                            it has to always refresh the data to decide what is the best decision to take next<br>
+                            based on the data provided and the set order of priority if multiple decisions are <br>
+                            available<br>
+                            <br>
+                            The issue was I was letting the bot perform multiple decisions per iteration of the overarching<br>
+                            infite loop. Because in my mind I thought more decisions made per iteration ment a faster bot<br>
+                            But I was wrong<br>
+                            Because any time a decisions is made assuming it is one that involes negativily affecting the value<br>
+                            of stats like building and hiring workers. Those cost some kind of resource and change the value of stats<br>
+                            So if the value changes they need to be updated again in order to run another decision<br>
+                            The problem was the bot was updating stats every single time it had to decide whether or not to perform a decision<br>
+                            <br>
+                            This meant that even if the stats were not negativily changed than the bot would still recheck the stats and used the<br>
+                            .collectAllData()<br>
+                            Which might I add was a very resource intensive method because it has to go and read all the value of <br>
+                            important stats from the webpage and save them to their corresponding variables<br>
+                            <br>
+                            My current approach now is by only allowing one decisions (That negatively affects stats) to be choose<br>
+                            per iteration so that the bot only runs .collectAllData() once at the start of the iteration<br>
+                            <br>
+                            This has shown a major increase in the bot's performance<br>
+                            <br>
+                            I have also allowed certain decisions of similar kind like hiring a worker to be able to do it multiple times<br>
+                            depending on the amount of resources<br>
+                            So it would trigger a hiring spree to hire multiple workers instead of hiring only one worker and than<br>
+                            checking the .collectAllData() and rehiring more workers<br>
+                            <br>
+                            I also let the bot run decisions that don't negatively impact resources on the same iteration <br>
+                            as running a decision that does negatively impact resources<br>
+                            This is because if the bot has already "created workers" it already spent the necessary workers<br>
+                            So now it should assign those workers to available possions which costs 0 resources and should be <br>
+                            performed at the same time that the decision to create workers is made<br>
+                            <br>
+                        </p>
+                    <h2>New Features Added</h2>
+                        <h3>Perform Upgrades</h3>
+                        <p>
+                            The bot will now purchase available upgrades<br>
+                            Not all. Haven't gotten to far into late game testing<br>
+                            Mostly letting the bot run from the beginning and middle<br>
+                            stage of the game<br>
+                            I also caught a few bugs that the bot would run into if dropped into<br>
+                            a session of a game that was already in the mid stage of the game<br>
+                            Fixed those. It mostly had to do with the way upgrades were being checked<br>
+                        </p>
+                        <h3>Hire workers</h3>
+                        <p>
+                            The bot will now hire workers to collect resources <br>
+                            It can hire three types of worker. Farmers, wood cutters, and<br>
+                            stone cutters.<br>
+                            The exact amount of workers to hire for each type is dependant<br>
+                            on the data collected. I am tweaking percentages and such<br>
+                            but to find the optial ratio I would have to run to bot to compete<br>
+                            against other instances of the same bot with different ratio's and compare<br>
+                            their stats<br>
+                        </p>
+                        <p>Constructing housing</p>
+                        <p>
+                            This one is quite simple and economic<br>
+                            The bought will construct the highest level of house available<br>
+                            Going from tent to wooden hut to cottage. Still adding newer houses<br>
+                            Then if the level of max population is equal to the current population <br>
+                            The bot will construct housing<br>
+                            The amount of houses to be constructed is dependant on the available resources<br>
+                            I don't want to let the bot build more houses than the available food to create more<br>
+                            workers are available<br>
+                            Because that means the bot would create too many houses that will not be occupied<br>
+                            and those resources could better be invested else where to maximize the economy<br>
+                            <br>
+                            It's all about buying what the economy needs and buying the most important upgrades<br>
+                            first to start compounding resource collected<br>
+                            <br>
+                            Haha guess that degree for Business Administration didn't go to waste<br>
+                        </p>
+                        <h3>Fail Safe Measure</h3>
+                        <p>
+                            The bot now allows the user to not only upload their previous save files<br>
+                            so the bot may work on previous work or previous savefiles done by<br>
+                            the user but also perform automatic saves<br>
+                            Because the game is a browser game and the bot runs a different versions<br>
+                            of chrome that is designed for testing. The memory of the game is saved to the websites<br>
+                            cookies<br>
+                            And this version of chrome doesn't save cookies after it's closed<br>
+                            So the bot has to manually export the save file from the game and hold on to it for the user<br>
+                            <br>
+                            Now the bot only returns the save file to the user when it is done playing/terminated<br>
+                            Even if the python program hits a major error the bot will run a finally: block that will<br>
+                            release the last savefile it collected back to the user through the terminal/CMD<br>
+                            <br>
+                            The auto saves are performed every minute and are so fast you can barely see the bot open the<br>
+                            import/export menu, click on the export button save all the contents and close the menu<br>
+                            <br>
+                            This is great because now if I run into a bug I can open it and replay the condition before the <br>
+                            bot hit the bug and see what might have caused it to than discover the source of the bug in my code<br>
+                            <br>
+                        </p>
+                    <h2>Identified bugs:</h2>
+                        <h3>Unclickable button being clicked:</h3>
+                            <p>
+                                Sometimes the bot will perform an action multiple times but around the last<br>
+                                few times it clicks on the buttont the state of the button changes to unclickable<br>
+                                due to a change in available resources<br>
+                                The bot will still waste time clicking on an unclickable action.<br>
+                                I believe the reasons may be because the resources arent being updates on certain decisions<br>
+                                that allow multiple clicks<br>
+                                I think a good fix would be a small data collections related to the decisions<br>
+                                NOT using .collectAllData() because that method is way too resources heavy<br>
+                                But something simple like updating the current amount of Wood<br>
+                                if the decisions negatively affects the current supply of wood<br>
+                            </p>
+                        <h3>Bot not hiring other workers except farmers:</h3>
+                            <p>
+                                I fixed this error but it came back the last time I ran the bot.<br>
+                                Last time it was due to the way the bot was checking for how<br>
+                                many of each worker it should have<br>
+                                I think perhaps I messed something up when I was changing the percentage ratio last night<br>
+                            </p>
+                <p>
+                
+                </p>
+            </div>
+            <hr>
             <!-- created on 3/25/2020 march 2020 -->
             <div>
                 <h1>Added Hosting For CivClicker(v1.1) to edwin-marino.com</h1>
@@ -170,6 +301,8 @@
                     it here like a demonstration of my bot in action.<br>
                 </p>
             </div>
+
+            <hr>
         </article>
         <footer>
             <h1>Resources and credits to:</h1>
