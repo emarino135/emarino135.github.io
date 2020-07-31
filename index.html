@@ -1,149 +1,136 @@
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head lang ="en">
-        <meta charset = "UTF-8">
-        <title>Edwin Marino</title>
-        <meta name="author" content="Edwin Marino">
-        <meta name="description" content="GMU COMPUTER SCIENCE STUDENT | DEVELOPMENT BLOGS | PROJECTS">
-        <meta name="keywords" content="edwin, marino, blog, computer science, george mason, gmu, university, college, virginia, dc">
-        <link rel = "icon" href = "favicon.ico" type = "image/x-icon">
-  
-    </head>
+	<head>
+		<title>Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <body>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-        <header>
-            <table>
-               
-                <img src = "images/author/profile_pic_small.webp">
-                <h1>Edwin Marino</h1>
-            
-            </table>    
-        </header>
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="fas fa-laptop-code fa-2x"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Edwin Marino</h1>
+								<p>
+									George Mason University, Bachelors of Computer Science exp. 2021<br>
+									Associate of Science Business Administration with Cum Laude 2020<br>
+									Associate of Science Computer Science with Cum Laude 2020<br>
+								</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#civbot">civbot</a></li>
+								<li><a href="#cc">cc</a></li>
+								<li><a href="#gamedev">game</a></li>
+								<li><a href="#chatroom">chatroom</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
 
-        <nav>
-            <div class = "header">
-                <h3 id = "menu">
-                    <a href = "index.html">Home</a>
-                    |
-                    <a href = "blogs_page.html"> Blogs</a>
-                    |
-                    <a href = "guides_page.html"> Guides</a>
-                    |
-                    <a href = "projects_page.html"> Projects</a>
-                    |
-                    Archives
-                </h3>
-            </div>
-        </nav>
-        <!--Create a drop down to choose which archive library
-            Blogs or Guides or Libraries-->
-        
-        
-        <!--Introduction-->
-        <section>
-            <header>
-                <h1>Home</h1>
-            </header>
-            <p>  
-                Hello welcome to my webpage <br>
-                Here you will find my personal development blog, <br>
-                programming guides, and completed projects <br>
-                <br>
-                <a href = "aboutMe.html">about me</a>
-                <br><br>
-                <a href = "portfolio.html"> Portfolio</a>       
-            </p>
-        </section>
+				<!-- Main -->
+					<div id="main">
 
-      
-        
-        <!-- Latest Blogs Panel -->
-        <section>
-            <header>
-                <h1>NEW BLOGS</h1>
-            </header>
-      
-            <div>
-                <h1>Python Bot Dev Blog</h1>
-                <p>
-                    Added CivClicker(v1.1)'s source code to edwin-marino.com <br>
-                    This should insure the bot remains usable for the foreseeable future<br>
-                    <a href = "single/blogs/blog2/page.html">Find out here</a><br>
-                    <a href = "single/blogs/blog2/page.html"><img src = "single/blogs/blog2/firstPython.png"></a><br>
-                    
-                </p>
-            </div>
-            <hr>
-        </section>        
-        <!-- Latest Guides Panel -->
-        <section>
-           <header>
-               <h1>NEW GUIDES</h1>
-            </header>
+						<!-- civot -->
+							<article id="civbot">
+								<h2 class="major">civbot (Python)</h2>
+								<span class="image main"><img src="images/civbot.png" alt="" /></span>
+								<p>
+									Program plays CivClicker and automates the process of building up your Civilization<br>
+									<br>
+									Written in Python and utilizes Selenium's library to control the browser<br>
+									Logic is structured as a finite state machine mixed with a set of priority objectives<br>
+									<br>
+									What would normally take a human player a few hours takes CivBot only a few minutes<br>
+									Varrying slightly on hardware<br>
+								</p>								
+							</article>
 
-            
-            <div>
-                <h1>How to get a cheap static website</h1> 
-                <p>
-                  
-                    Find out how I set up a custom domain and got FREE web hosting<br>
-                    using github pages  <br>
-                   
-                    <a href = "single/guides/guide1/page.html">More details</a><br>
-                    <a href = "https://pages.github.com/"><img src = "single/guides/guide1/githubpages.png"></a>
-                    <br>
-                </p>
-            </div>  
-             
-            <div>
-                <h1>How to create a custom Visual Studio Theme</h1> 
-                <p>
-                  
-                    Find out how to create your own <br>
-                    personalized Visual Studio Theme <br>
-                    step by step!<br>
-                   
-                    <a href = "single/guides/guide2/page.html">Find out how</a><br>
-                    <a href = "single/guides/guide2/page.html"><img src = "single/guides/guide2/mytheme.png"></a>
-                    <br>
-                </p>
-            </div> 
-        </section>
-        <hr>
-        <!-- Latest Projects Panel -->
-        <section>
-            <header>
-                <h3>PROJECTS</h3>
-            </header>
-            <div>
-                <h1>Basic TicTacToe GUI with Java!</h1>  
-                <p>
-                    Find out how to create a basic TicTacToe game using Swing's library<br>
-                    <a href = "single/projects/project1/page.html">Read details</a><br>
-                    <a href = "single/projects/project1/page.html"><img src = "single/projects/project1/miniFinished.png"></a>
-                </p>
-                <br>
-                <hr>
-            </div>
-            <div>
-                <h1>Creating a Caesar's Cypher Decrypter/Encrypter</h1>  
-                <p>
-                    How I took two Java algorithms and combined them into an application with a functional GUI<br>
-                    <a href = "single/projects/project2/page.html">Read details</a><br>
-                    <a href = "single/projects/project2/page.html"><img src = "single/projects/project2/decrypting.png"></a>
-                </p>
-                <br>
-                <hr>
-            </div>
-        </section>
-        
-        <!--Contact me section and outside links-->
-        <footer>
-            <a href = "contact.html">Contact Me</a>                 
-            <br>
-        </footer>
-    </body>
+						<!-- leadership -->
+							<article id="cc">
+								<h2 class="major">Caesar's Cypher (Java)</h2>
+								<span class="image main"><img src="images/cc.png" alt="" /></span>
+								<p>
+									Program takes a String and shifts the characters in the alphabet by a given integer<br>
+									<br>
+									Written in Java and applies the Swing library to provide a clear user interface<br>
+									<br>
+									The logic was originally written to display on the command-line which was later<br>
+									adapted into a new GUI.java through a packaged structure to call upon old functions<br>
+									with a new graphical user interface<br>
+									<br>
+									
+								</p>
+							</article>
 
+						<!-- gamedev -->
+							<article id="gamedev">
+								<h2 class="major">Alien-Game (GML)</h2>
+								<span class="image main"><img src="images/alien_shooter.gif" alt="" /></span>
+								<p>
+									<br>
+									Game created using GMS 2.0 and written in GML<br>
+									<br>
+									One of my favorite passion projects where I learned to utilize the GPU to process the splash particles to reduce
+									CPU usage and boost performance.<br>
+									<br>
+									This project took the most amount of planning, organization and documentation than any previous project in order to get
+									all the objects and scripts to work due to the shere size and scalability along the way.
+								</p>
+								</article>
+						
+								
+						<!-- chatroom -->
+							<article id="chatroom">
+								<h2 class="major">Chatroom (GML)</h2>
+								<span class="image main"><img src="images/client_chatroom.png" alt="" /></span>
+								<p>
+									<br>
+									Application created with GML 2.0 and written in GML and uses Networked TCP Sockets and port-forwarding to create a public server from which
+									anyone with internet access can join using the Client-side application<br>
+									<br>
+									This project had to be structed with consideration that there will be tons of asynchronous events to account of networked devices<br>
+									<br>
+									There had to be a clear disctinction of what had to be handled Server-side and Client-side. As well as Server-side data structures to save usernames<br>
+									to client-session and ip-addresses.<br>
+									<br>
+									For the transmission of data it had to be packaged as buffers with enums to identify the type of data and how to process it<br>
+									<br>
+									The enums were used to identify events like users joining, disconnecting, messaging and movement(The colorful boxes)<br>
+								</p>
+							</article>
+						
+
+						<!-- Elements -->
+							
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
+
