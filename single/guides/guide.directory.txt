@@ -1,1 +1,0 @@
-guide1: How to get a static website
