@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Final Coding Challenge</title>
+        <link rel="stylesheet" type="text/css" href="style.css">        
+        <!-- reference script index.js-->
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <!-- Create div element for instructions manual-->
+        <div id="instructions">
+            <h1>Date Format Converter</h1>
+            <p>
+                Please provide a date into the following boxes and pick a format to convert to
+            </p>
+        </div>
+       
+        <!-- Create a div table with 3 columns and 1 row for month day and year -->
+        <div id="date">
+            <form name="dateForm" action="index.js" method="post" onsubmit="return validateForm()">
+                <table id="table">
+                    <tr>
+                        <td>
+                             <!-- Create div element for selecting a month (code stored in index.js) -->
+                            <div id="month-selector">
+                                <h1>Month</h1>                                
+                                <select id="month-selector-select" name="month">
+                                    <option value="" selected disabled hidden>Select a month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- Create div element for inputing(texting) a day (code stored in index.js) -->
+                            <div id="day-input">
+                                <h1>Day</h1>
+                                <!-- may only accept integers if index.js isValidDay-->
+                                <input type="text" id="day-input-text" maxlength="2" name="day" placeholder="Enter a day", value="">
+                            </div>
+                        </td>
+                        <td>
+                            <!-- Create div element for inputing(texting) a year (code stored in index.js) -->
+                            <div id="year-input">
+                                <h1>Year</h1>
+                                <input type="text" id="year-input-input" size="10" placeholder="Enter a year" name="year" value="">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <div id="FormationDiv">
+                    <select id="format-select" name="format">
+                        <option value="" selected disabled hidden>Select a Format</option>
+                        <option value="1">DD/MM/YYYY</option>
+                        <option value="2">MM/DD/YYYY</option>
+                        <option value="3">DD/MM/YY</option>
+                        <option value="4">MM/DD/YY</option>
+                        <option value="5">MONTH DAY YEAR</option>
+                        <option value="6">DAY MONTH YEAR</option>
+                        <option value="7">DD-MON-YY</option>
+                        <option value="8">DD-MON</option>
+                    </select>
+                </div>
+                <br>
+                <div id="submitbuttom">
+                    <input type="submit" value="Submit">
+                </div>
+                <br>
+                <div id = "output">
+                    <h1>Output:</h1>
+                    <p id="output-text"></p>
+                    <h3>DAY OF YEAR</h3>
+                    <p id="Day-of-year"></p>
+                    <h3>DAY OF THE WEEK</h3>
+                    <p id="Day-of-week"></p>
+                </div>
+            </form>
+        </div>
+       
+        <div id="credit">
+            <p>
+                Created by: Edwin G Marino
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+
+#instructions {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+#month-selector, #year-input, #day-input {
+  text-align: center;
+  /*center all text in the div*/
+}
+#Output {
+  display: none;
+}
+body {
+  background-color: #a0ffa0;
+}
+#table {
+  border: 1px solid black;
+  background-color: #35863b;
+  margin: auto;
+  
+  width: 60%;
+}
+#FormationDiv {
+  border: 1px solid black;
+  background-color: #35863b;
+  margin: auto;
+  text-align: center;
+  width: 60%;
+}
+#submitbuttom {
+  margin: auto;
+  text-align: center;
+  width: 60%;
+}
+#month-selector, #year-input, #day-input {
+  border: 1px solid black;
+  background-color: #6bbe6b;
+}
+#Output {
+  width: 60%;
+  margin: auto;
+  border: 1px solid black;
+  background-color: #f0ff6b;
+  text-align: center;
+}
